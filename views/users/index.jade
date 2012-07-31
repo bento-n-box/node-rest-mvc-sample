@@ -1,0 +1,28 @@
+
+h2 
+	Users
+ul 
+	for user in users
+		li  #{user.name.first} #{user.name.last} 
+		
+p=errors
+	
+form(action ='/users' ,method='post') 
+	label First Name:
+	input(name ='user[name_first]')
+	br
+	label Last Name:
+	input(name ='user[name_last]')
+	br	
+	label Email:
+	input(name ='user[email]')
+	br
+	label role:
+	input(name ='user[role]')
+	br		
+	label password:
+	input(name ='user[pass]')
+	br
+	input(type='submit', value='create user')
+	
+	   
