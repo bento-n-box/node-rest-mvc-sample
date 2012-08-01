@@ -15,8 +15,8 @@ var UsersController = {
   
   
   ,detail: function (req, res) {
-  	 UsersModel.list(function (usersList) {
-    	res.render('users/detail');
+  	 UsersModel.detail(function (usersList) {
+    	res.render('users/index', {users:usersList, errors:[]});
     });
   }
   

@@ -48,7 +48,9 @@ var UsersModel = {
         });
         
       });
+      
       }
+       
     }); // db.
       
   }, // list()
@@ -57,13 +59,13 @@ var UsersModel = {
     
     db.open(function(err, db) {
     if (err) {
-        sys.puts(err);
+       console.log(err, db)
     } else {
       
-      db.collection('users/detail', function(err, collection) {
+      db.collection('users', function(err, collection) {
         
-        collection.find().toArray(function(err, results) {
-          
+        collection.find({'_id':o_id}, function(err, results) {
+        
           db.close();
           callback(results);
           
@@ -74,7 +76,7 @@ var UsersModel = {
       
     }); // db.
       
-  }, // list()
+  }, // detail()
   
   create:function (data) {
 
